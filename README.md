@@ -23,3 +23,23 @@ http://localhost:8001/fetchAvailableItems
 
 2)Ability to book multible grocery items in a single order
 http://localhost:8001/OrderGroceryItems
+
+**Query for database and table setup**
+-- create database
+CREATE DATABASE IF NOT EXISTS `grocery_database`;
+USE `grocery_database`;
+
+-- Table structure for table `grocery`
+DROP TABLE IF EXISTS `product`;
+
+CREATE TABLE `product` (
+`product_Code` integer NOT NULL auto_increment,
+`product_Name` varchar(20) NOT NULL,
+`product_price` decimal NOT NULL,
+`product_size` varchar(10) DEFAULT NULL,
+`product_quantity` integer,
+`product_discription` varchar(100) DEFAULT NULL,
+`product_category` varchar(15) NOT NULL,
+primary key(`product_Code`)
+)ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1;
+

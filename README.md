@@ -24,6 +24,15 @@ http://localhost:8001/fetchAvailableItems
 2)Ability to book multible grocery items in a single order
 http://localhost:8001/OrderGroceryItems
 
+**Query for user setup**
+-- Drop userfirst if they exist
+DROP USER if exists 'grocerydatabase'@'localhost' ;
+
+-- Now create user with prop privileges
+CREATE USER 'grocerydatabase'@'localhost' identified BY 'grocerydatabase';
+
+GRANT ALL PRIVILEGES ON * . * TO 'grocerydatabase'@'localhost';
+
 **Query for database and table setup**
 -- create database
 CREATE DATABASE IF NOT EXISTS `grocery_database`;
